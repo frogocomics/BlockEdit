@@ -1,0 +1,41 @@
+<component name="libraryTable">
+  <library name="libraryjavasound-20101123">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/library/libraryjavasound-20101123.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/authlib-1.5.21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/jopt-simple-4.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/jinput-2.0.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/httpcore-4.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/httpclient-4.3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/commons-logging-1.1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/log4j-api-2.0-beta9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/soundsystem-20120107.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/log4j-core-2.0-beta9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/lwjgl-2.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/jutils-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/trove4j-3.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/guava-17.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/codecwav-20101023.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/icu4j-core-mojang-51.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/twitch-6.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/netty-all-4.0.15.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/lwjgl_util-2.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/gson-2.2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/librarylwjglopenal-20100824.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/vecmath-1.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/codecjorbis-20101023.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/realms-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/commons-codec-1.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="jar://$PROJECT_DIR$/src/main/library/twitch-external-platform-4.5-natives-windows-64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/jinput-platform-2.0.5-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/lwjgl-platform-2.9.1-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/library/twitch-platform-6.5-natives-windows-64.jar!/" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src/main/java" />
+    </SOURCES>
+  </library>
+</component>
