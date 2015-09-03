@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PowerNbt.iml" filepath="$PROJECT_DIR$/PowerNbt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BlockEdit.iml" filepath="$PROJECT_DIR$/BlockEdit.iml" />
     </modules>
   </component>
 </project>
