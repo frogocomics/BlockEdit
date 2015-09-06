@@ -19,6 +19,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="BlockEdit" target="1.8" />
       <module name="PowerNbt" target="1.8" />
       <module name="PowerNbt-Core" target="1.5" />
     </bytecodeTargetLevel>
