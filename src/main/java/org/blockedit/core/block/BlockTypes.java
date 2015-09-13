@@ -17,7 +17,16 @@
  */
 package org.blockedit.core.block;
 
+import com.google.common.collect.ImmutableMap;
+
+import org.blockedit.exception.DataException;
+import org.javatuples.Quintet;
 import org.javatuples.Triplet;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Optional;
 
 /**
  * Contains a list of all the blocks in Minecraft. Each block is formatted like this:
@@ -29,64 +38,119 @@ import org.javatuples.Triplet;
  */
 public class BlockTypes {
 
-    public static final Triplet<Integer, String, String> AIR = new Triplet<>(0, "minecraft:air", "Air");
-    public static final Triplet<Integer, String, String> STONE = new Triplet<>(1, "minecraft:stone", "Stone");
-    public static final Triplet<Integer, String, String> GRASS = new Triplet<>(2, "minecraft:grass", "Grass Block");
-    public static final Triplet<Integer, String, String> DIRT = new Triplet<>(3, "minecraft:dirt", "Dirt");
-    public static final Triplet<Integer, String, String> COBBLESTONE = new Triplet<>(4, "minecraft:cobblestone", "Cobblestone");
-    public static final Triplet<Integer, String, String> PLANKS = new Triplet<>(5, "minecraft:planks", "Wood Plank");
-    public static final Triplet<Integer, String, String> SAPLING = new Triplet<>(6, "minecraft:sapling", "Sapling");
-    public static final Triplet<Integer, String, String> BEDROCK = new Triplet<>(7, "minecraft:bedrock", "Bedrock");
-    public static final Triplet<Integer, String, String> FLOWING_WATER = new Triplet<>(8, "minecraft:flowing_water", "Flowing Water");
-    public static final Triplet<Integer, String, String> STILL_WATER = new Triplet<>(9, "minecraft:water", "Still Water");
-    public static final Triplet<Integer, String, String> FLOWING_LAVA = new Triplet<>(10, "minecraft:flowing_lava", "Flowing Lava");
-    public static final Triplet<Integer, String, String> STILL_LAVA = new Triplet<>(11, "minecraft:lava", "Still Lava");
-    public static final Triplet<Integer, String, String> SAND = new Triplet<>(12, "minecraft:sand", "Sand");
-    public static final Triplet<Integer, String, String> GRAVEL = new Triplet<>(13, "minecraft:gravel", "Gravel");
-    public static final Triplet<Integer, String, String> GOLD_ORE = new Triplet<>(14, "minecraft:gold_ore", "Gold Ore");
-    public static final Triplet<Integer, String, String> IRON_ORE = new Triplet<>(15, "minecraft:iron_ore", "Iron Ore");
-    public static final Triplet<Integer, String, String> COAL_ORE = new Triplet<>(16, "minecraft:coal_ore", "Coal Ore");
-    public static final Triplet<Integer, String, String> LOG = new Triplet<>(17, "minecraft:log", "Oak Wood");
-    public static final Triplet<Integer, String, String> LEAVES = new Triplet<>(18, "minecraft:leaves", "Oak Leaves");
-    public static final Triplet<Integer, String, String> SPONGE = new Triplet<>(19, "minecraft:sponge", "Sponge");
-    public static final Triplet<Integer, String, String> GLASS = new Triplet<>(20, "minecraft:glass", "Glass");
-    public static final Triplet<Integer, String, String> LAPIS_ORE = new Triplet<>(21, "minecraft:lapis_ore", "Lapis Lazuli Ore");
-    public static final Triplet<Integer, String, String> LAPIS_BLOCK = new Triplet<>(22, "minecraft:lapis_block", "Lapis Lazuli Block");
-    public static final Triplet<Integer, String, String> DISPENSER = new Triplet<>(23, "minecraft:dispenser", "Dispenser");
-    public static final Triplet<Integer, String, String> SANDSTONE = new Triplet<>(24, "minecraft:sandstone", "Sandstone");
-    public static final Triplet<Integer, String, String> NOTE_BLOCK = new Triplet<>(25, "minecraft:noteblock", "Note Block");
-    public static final Triplet<Integer, String, String> BED = new Triplet<>(26, "minecraft:bed", "Bed");
-    public static final Triplet<Integer, String, String> POWERED_RAIL = new Triplet<>(27, "minecraft:golden_rail", "Powered Rail");
-    public static final Triplet<Integer, String, String> DETECTOR_RAIL = new Triplet<>(28, "minecraft:detector_rail", "Detector Rail");
-    public static final Triplet<Integer, String, String> STICKY_PISTON = new Triplet<>(29, "minecraft:sticky_piston", "Sticky Piston");
-    public static final Triplet<Integer, String, String> COBWEB = new Triplet<>(30, "minecraft:cobweb", "Cobweb");
-    public static final Triplet<Integer, String, String> DEAD_SHRUB = new Triplet<>(31, "minecraft:tallgrass", "Dead Shrub");
-    public static final Triplet<Integer, String, String> DEAD_BUSH = new Triplet<>(32, "minecraft:deadbush", "Dead Bush");
-    public static final Triplet<Integer, String, String> PISTON = new Triplet<>(33, "minecraft:piston", "Piston");
-    public static final Triplet<Integer, String, String> PISTON_HEAD = new Triplet<>(34, "minecraft:piston_head", "Piston Head");
-    public static final Triplet<Integer, String, String> WOOL = new Triplet<>(35, "minecraft:wool", "Wool");
-    public static final Triplet<Integer, String, String> YELLOW_FLOWER = new Triplet<>(37, "minecraft:yellow_flower", "Dandelion");
-    public static final Triplet<Integer, String, String> RED_FLOWER = new Triplet<>(38, "minecraft:red_flower", "Poppy");
-    public static final Triplet<Integer, String, String> BROWN_MUSHROOM = new Triplet<>(39, "minecraft:brown_mushroom", "Brown Mushroom");
-    public static final Triplet<Integer, String, String> RED_MUSHROOM = new Triplet<>(40, "minecraft:red_mushroom", "Red Mushroom");
-    public static final Triplet<Integer, String, String> GOLD_BLOCK = new Triplet<>(41, "minecraft:gold_block", "Gold Block");
-    public static final Triplet<Integer, String, String> IRON_BLOCK = new Triplet<>(42, "minecraft:iron_block", "Iron Block");
-    public static final Triplet<Integer, String, String> DOUBLE_STONE_SLAB = new Triplet<>(43, "minecraft:double_stone_slab", "Double Stone Slab");
-    public static final Triplet<Integer, String, String> STONE_SLAB = new Triplet<>(44, "minecraft:stone_slab", "Stone Slab");
-    public static final Triplet<Integer, String, String> BRICKS = new Triplet<>(45, "minecraft:brick_block", "Bricks");
-    public static final Triplet<Integer, String, String> TNT = new Triplet<>(46, "minecraft:tnt", "TNT");
-    public static final Triplet<Integer, String, String> BOOKSHELF = new Triplet<>(47, "minecraft:bookshelf", "Bookshelf");
-    public static final Triplet<Integer, String, String> MOSS_STONE = new Triplet<>(48, "minecraft:mossy_cobblestone", "Moss Stone");
-    public static final Triplet<Integer, String, String> OBSIDIAN = new Triplet<>(49, "minecraft:obsidin", "Obsidian");
-    public static final Triplet<Integer, String, String> TORCH = new Triplet<>(50, "minecraft.torch", "Torch");
-    public static final Triplet<Integer, String, String> FIRE = new Triplet<>(51, "minecraft:fire", "Fire");
-    public static final Triplet<Integer, String, String> MOB_SPAWNER = new Triplet<>(52, "minecraft:mob_spawner", "Monster Spawner");
-    public static final Triplet<Integer, String, String> OAK_STAIRS = new Triplet<>(53, "minecraft:oak_stairs", "Oak Wood Stairs");
-    public static final Triplet<Integer, String, String> CHEST = new Triplet<>(54, "minecraft:chest", "Chest");
-    public static final Triplet<Integer, String, String> REDSTONE_WIRE = new Triplet<>(55, "minecraft:redstone_wire", "Redstone Wire");
-    public static final Triplet<Integer, String, String> DIAMOND_ORE = new Triplet<>(56, "minecraft:diamond_ore", "Diamond Ore");
-    public static final Triplet<Integer, String, String> DIAMOND_BLOCK = new Triplet<>(57, "minecraft:diamond_block", "Diamond Block");
-    public static final Triplet<Integer, String, String> CRAFTING_TABLE = new Triplet<>(58, "minecraft:crafting_table", "Crafting Table");
-    public static final Triplet<Integer, String, String> WHEAT_CROPS = new Triplet<>(59, "minecraft:wheat", "Wheat");
-    public static final Triplet<Integer, String, String> FARMLAND = new Triplet<>(60, "minecraft:farmland", "Farmland");
+    private static HashMap<Integer, Quintet<Integer, String, String, Boolean, Block.BlockData[]>> blocks = new HashMap<>();
+    private static boolean initialized = false;
+
+    //TPDP
+    public static HashMap<Integer, Quintet<Integer, String, String, Boolean, Block.BlockData>> initialize() throws DataException {
+        /**BlockTypes.blocks.put(0, new Quintet<>(0, "minecraft:air", "Air", false, new Block.BlockData[]{new Block.BlockData.Builder().data(0).build()}));
+        BlockTypes.blocks.put(1, new Quintet<>(1, "minecraft:stone", "Stone", false, new Block.BlockData[]{new Block.BlockData.Builder().data(0).build()}));
+        BlockTypes.blocks.put(2, new Quintet<>(2, "minecraft:grass", "Grass Block"));
+        BlockTypes.blocks.put(3, new Quintet<>(3, "minecraft:dirt", "Dirt"));
+        BlockTypes.blocks.put(4, new Quintet<>(4, "minecraft:cobblestone", "Cobblestone"));
+        BlockTypes.blocks.put(5, new Quintet<>(5, "minecraft:planks", "Wood Plank"));
+        BlockTypes.blocks.put(6, new Quintet<>(6, "minecraft:sapling", "Sapling"));
+        BlockTypes.blocks.put(7, new Quintet<>(7, "minecraft:bedrock", "Bedrock"));
+        BlockTypes.blocks.put(8, new Quintet<>(8, "minecraft:flowing_water", "Flowing Water"));
+        BlockTypes.blocks.put(9, new Quintet<>(9, "minecraft:water", "Still Water"));
+        BlockTypes.blocks.put(10, new Quintet<>(10, "minecraft:flowing_lava", "Flowing Lava"));
+        BlockTypes.blocks.put(11, new Quintet<>(11, "minecraft:lava", "Still Lava"));
+        BlockTypes.blocks.put(12, new Quintet<>(12, "minecraft:sand", "Sand"));
+        BlockTypes.blocks.put(13, new Quintet<>(13, "minecraft:gravel", "Gravel"));
+        BlockTypes.blocks.put(14, new Quintet<>(14, "minecraft:gold_ore", "Gold Ore"));
+        BlockTypes.blocks.put(15, new Quintet<>(15, "minecraft:iron_ore", "Iron Ore"));
+        BlockTypes.blocks.put(16, new Quintet<>(16, "minecraft:coal_ore", "Coal Ore"));
+        BlockTypes.blocks.put(17, new Quintet<>(17, "minecraft:log", "Oak Wood"));
+        BlockTypes.blocks.put(18, new Quintet<>(18, "minecraft:leaves", "Oak Leaves"));
+        BlockTypes.blocks.put(19, new Quintet<>(19, "minecraft:sponge", "Sponge"));
+        BlockTypes.blocks.put(20, new Quintet<>(20, "minecraft:glass", "Glass"));
+        BlockTypes.blocks.put(21, new Quintet<>(21, "minecraft:lapis_ore", "Lapis Lazuli Ore"));
+        BlockTypes.blocks.put(22, new Quintet<>(22, "minecraft:lapis_block", "Lapis Lazuli Block"));
+        BlockTypes.blocks.put(23, new Quintet<>(23, "minecraft:dispenser", "Dispenser"));
+        BlockTypes.blocks.put(24, new Quintet<>(24, "minecraft:sandstone", "Sandstone"));
+        BlockTypes.blocks.put(25,new Quintet<>(25, "minecraft:noteblock", "Note Block"));
+        BlockTypes.blocks.put(26, new Quintet<>(26, "minecraft:bed", "Bed"));
+        BlockTypes.blocks.put(27, new Quintet<>(27, "minecraft:golden_rail", "Powered Rail"));
+        BlockTypes.blocks.put(28, new Quintet<>(28, "minecraft:detector_rail", "Detector Rail"));
+        BlockTypes.blocks.put(29, new Quintet<>(29, "minecraft:sticky_piston", "Sticky Piston"));
+        BlockTypes.blocks.put(30, new Quintet<>(30, "minecraft:cobweb", "Cobweb"));
+        BlockTypes.blocks.put(31, new Quintet<>(31, "minecraft:tallgrass", "Dead Shrub"));
+        BlockTypes.blocks.put(32, new Quintet<>(32, "minecraft:deadbush", "Dead Bush"));
+        BlockTypes.blocks.put(33, new Quintet<>(33, "minecraft:piston", "Piston"));
+        BlockTypes.blocks.put(34, new Quintet<>(34, "minecraft:piston_head", "Piston Head"));
+        BlockTypes.blocks.put(35, new Quintet<>(35, "minecraft:wool", "Wool"));
+        BlockTypes.blocks.put(37, new Quintet<>(37, "minecraft:yellow_flower", "Dandelion"));
+        BlockTypes.blocks.put(38, new Quintet<>(38, "minecraft:red_flower", "Poppy"));
+        BlockTypes.blocks.put(39, new Quintet<>(39, "minecraft:brown_mushroom", "Brown Mushroom"));
+        BlockTypes.blocks.put(40, new Quintet<>(40, "minecraft:red_mushroom", "Red Mushroom"));
+        BlockTypes.blocks.put(41, new Quintet<>(41, "minecraft:gold_block", "Gold Block"));
+        BlockTypes.blocks.put(42, new Quintet<>(42, "minecraft:iron_block", "Iron Block"));
+        BlockTypes.blocks.put(43, new Quintet<>(43, "minecraft:double_stone_slab", "Double Stone Slab"));
+        BlockTypes.blocks.put(44, new Quintet<>(44, "minecraft:stone_slab", "Stone Slab"));
+        BlockTypes.blocks.put(45, new Quintet<>(45, "minecraft:brick_block", "Bricks"));
+        BlockTypes.blocks.put(46, new Quintet<>(46, "minecraft:tnt", "TNT"));
+        BlockTypes.blocks.put(47, new Quintet<>(47, "minecraft:bookshelf", "Bookshelf"));
+        BlockTypes.blocks.put(48, new Quintet<>(48, "minecraft:mossy_cobblestone", "Moss Stone"));
+        BlockTypes.blocks.put(49, new Quintet<>(49, "minecraft:obsidin", "Obsidian"));
+        BlockTypes.blocks.put(50, new Quintet<>(50, "minecraft.torch", "Torch"));
+        BlockTypes.blocks.put(51, new Quintet<>(51, "minecraft:fire", "Fire"));
+        BlockTypes.blocks.put(52, new Quintet<>(52, "minecraft:mob_spawner", "Monster Spawner"));
+        BlockTypes.blocks.put(53, new Quintet<>(53, "minecraft:oak_stairs", "Oak Wood Stairs"));
+        BlockTypes.blocks.put(54, new Quintet<>(54, "minecraft:chest", "Chest"));
+        BlockTypes.blocks.put(55, new Quintet<>(55, "minecraft:redstone_wire", "Redstone Wire"));
+        BlockTypes.blocks.put(56, new Quintet<>(56, "minecraft:diamond_ore", "Diamond Ore"));
+        BlockTypes.blocks.put(57, new Quintet<>(57, "minecraft:diamond_block", "Diamond Block"));
+        BlockTypes.blocks.put(58, new Quintet<>(58, "minecraft:crafting_table", "Crafting Table"));
+        BlockTypes.blocks.put(59, new Quintet<>(59, "minecraft:wheat", "Wheat"));
+        BlockTypes.blocks.put(60, new Quintet<>(60, "minecraft:farmland", "Farmland"));
+        BlockTypes.initialized = true;
+        return BlockTypes.blocks;**/
+        return null;
+    }
+
+    public static Optional<Quintet<Integer, String, String, Boolean, Block.BlockData[]>> fromId(int id) {
+        if(!BlockTypes.initialized) {
+            return Optional.empty();
+        } else {
+            if(BlockTypes.blocks.containsKey(id)) {
+                return Optional.of(BlockTypes.blocks.get(id));
+            } else {
+                return Optional.empty();
+            }
+        }
+    }
+
+    public static Optional<String> getBlockDisplayName(int id) {
+        if(BlockTypes.blocks.isEmpty()) {
+            return Optional.empty();
+        } else {
+            if(BlockTypes.blocks.containsKey(id)) {
+                return Optional.of(BlockTypes.blocks.get(id).getValue2());
+            } else {
+                return Optional.empty();
+            }
+        }
+    }
+
+    public static Optional<String> getBlockName(int id) {
+        if(BlockTypes.blocks.isEmpty()) {
+            return Optional.empty();
+        } else {
+            if(BlockTypes.blocks.containsKey(id)) {
+                return Optional.of(BlockTypes.blocks.get(id).getValue1());
+            } else {
+                return Optional.empty();
+            }
+        }
+    }
+
+    public static ImmutableMap<Integer, Quintet<Integer, String, String, Boolean, Block.BlockData[]>> getBlocks() {
+        ImmutableMap.Builder<Integer, Quintet<Integer, String, String, Boolean, Block.BlockData[]>> builder = new ImmutableMap.Builder<>();
+        Iterator<Map.Entry<Integer, Quintet<Integer, String, String, Boolean, Block.BlockData[]>>> iterator = BlockTypes.blocks.entrySet().iterator();
+        while(iterator.hasNext()) {
+            Map.Entry<Integer, Quintet<Integer, String, String, Boolean, Block.BlockData[]>> next = iterator.next();
+            builder.put(next.getKey(), next.getValue());
+        }
+        return builder.build();
+    }
 }

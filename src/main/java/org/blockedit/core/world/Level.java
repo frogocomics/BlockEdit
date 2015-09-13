@@ -21,27 +21,16 @@ package org.blockedit.core.world;
 import org.blockedit.exception.DataDoesNotExistException;
 import org.blockedit.exception.DataException;
 import org.javatuples.Triplet;
-import org.jnbt.ByteArrayTag;
 import org.jnbt.ByteTag;
 import org.jnbt.CompoundTag;
-import org.jnbt.DoubleTag;
-import org.jnbt.EndTag;
-import org.jnbt.FloatTag;
-import org.jnbt.IntArrayTag;
-import org.jnbt.IntTag;
-import org.jnbt.ListTag;
-import org.jnbt.LongTag;
 import org.jnbt.NBTInputStream;
 import org.jnbt.NBTOutputStream;
-import org.jnbt.ShortTag;
 import org.jnbt.StringTag;
 import org.jnbt.Tag;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -75,10 +64,10 @@ public final class Level {
     }
 
     private final Map<String, Tag> levelData;
-    private final TreeMap<String, Object> gameRules;
+    private final Map<String, Tag> gameRules;
     private final Triplet<Integer, String, Boolean> worldVersion;
 
-    private Level(Map<String, Tag> levelData, TreeMap<String, Object> gameRules, Triplet<Integer, String, Boolean> worldVersion) {
+    private Level(Map<String, Tag> levelData, Map<String, Tag> gameRules, Triplet<Integer, String, Boolean> worldVersion) {
         this.levelData = levelData;
         this.gameRules = gameRules;
         this.worldVersion = worldVersion;
@@ -91,6 +80,15 @@ public final class Level {
      */
     public Map<String, Tag> getLevel() {
         return this.levelData;
+    }
+
+    /**
+     * Get the game rules
+     *
+     * @return Returns the game rules
+     */
+    public Map<String, Tag> getGameRules() {
+        return this.gameRules;
     }
 
     /**
@@ -151,7 +149,7 @@ public final class Level {
     public static class Builder {
 
         private Map<String, Tag> levelData = new TreeMap<>();
-        private TreeMap<String, Object> gameRules = new TreeMap<>();
+        private Map<String, Tag> gameRules = new TreeMap<>();
         private Triplet<Integer, String, Boolean> worldVersion;
 
         /**
@@ -192,7 +190,7 @@ public final class Level {
          * @param value The value of the rule
          * @return Returns this builder, for chaining
          */
-        public Builder gameRule(String rule, Object value) {
+        public Builder gameRule(String rule, Tag value) {
             this.gameRules.put(rule, value);
             return this;
         }
@@ -203,7 +201,7 @@ public final class Level {
          * @param gameRules The game rules
          * @return Returns this builder, for chaining
          */
-        public Builder gameRule(TreeMap<String, Object> gameRules) {
+        public Builder gameRule(Map<String, Tag> gameRules) {
             this.gameRules = gameRules;
             return this;
         }
@@ -239,8 +237,11 @@ public final class Level {
 
         private NBTInputStream stream;
         private Map<String, Tag> levelData = new TreeMap<>();
-        private final TreeMap<String, Object> gameRules = new TreeMap<>();
+        private Map<String, Tag> gameRules = new TreeMap<>();
         private Triplet<Integer, String, Boolean> worldVersion;
+        private int id = 0;
+        private String version;
+        private boolean snapshot = false;
 
         public Loader(File location) throws IOException {
             this.stream = new NBTInputStream(new FileInputStream(location));
@@ -255,39 +256,9 @@ public final class Level {
             return this.stream;
         }
 
-        public TreeMap<String, Object> loadGameRules() throws IOException, NumberFormatException, DataDoesNotExistException {
-
-            TreeMap<String, Object> rules = new TreeMap<>();
-
-            if (this.stream.readTag() instanceof CompoundTag) {
-                CompoundTag levelSettings = (CompoundTag) this.stream.readTag();
-
-                if (levelSettings.getValue().get("GameRules") != null) {
-                    CompoundTag gameRules = (CompoundTag) levelSettings.getValue().get("GameRules");
-                    Iterator<Map.Entry<String, Tag>> gameRuleIterator = gameRules.getValue().entrySet().iterator();
-
-                    while (gameRuleIterator.hasNext()) {
-
-                        Map.Entry<String, Tag> next = gameRuleIterator.next();
-
-                        if (next.getValue() instanceof StringTag) {
-
-                            if (next.getValue().getName().equals("randomTickSpeed")) {
-                                rules.put(gameRuleIterator.next().getKey(), Integer.parseInt(((StringTag) gameRuleIterator.next().getValue()).getValue()));
-                            } else {
-                                rules.put(gameRuleIterator.next().getKey(), Boolean.parseBoolean(((StringTag) gameRuleIterator.next().getValue()).getValue()));
-                            }
-                        }
-                    }
-                } else {
-                    throw new DataDoesNotExistException("The gamerules do not exist!");
-                }
-            }
-            if (rules == null) {
-                throw new DataDoesNotExistException("The gamerules do not exist!");
-            } else {
-                return rules;
-            }
+        public Map<String, Tag> loadGameRules() throws IOException, NumberFormatException, DataDoesNotExistException {
+            Map<String, Tag> rules = new TreeMap<>();
+            return rules;
         }
 
         /**
@@ -307,11 +278,39 @@ public final class Level {
                 System.out.println(levelSettings.getValue());
                 this.levelData = levelSettings.getValue();
 
-                if(this.levelData.containsKey("GameRules")) {
-
+                if(this.levelData.containsKey("GameRules") & this.levelData.get("GameRules") instanceof CompoundTag) {
+                    Map<String, Tag> gameRuleSettings = ((CompoundTag) this.levelData.get("GameRules")).getValue();
+                    this.gameRules = gameRuleSettings; 
                 }
-                if(this.levelData.containsKey("Version")) {
-                    
+                if(this.levelData.containsKey("Version") & this.levelData.get("Version") instanceof CompoundTag) {
+                    Map<String, Tag> versionSettings = ((CompoundTag) this.levelData.get("Version")).getValue();
+
+                    if(versionSettings.containsKey("Id")) {
+                        if(versionSettings.get("Id") instanceof StringTag) {
+                            this.id = Integer.parseInt(((StringTag) versionSettings.get("Id")).getValue());
+                        }
+                    }
+                    if(versionSettings.containsKey("Name")) {
+                        if(versionSettings.get("Name") instanceof StringTag) {
+                            this.version = ((StringTag) versionSettings.get("Name")).getValue();
+                        }
+                    }
+                    if(versionSettings.containsKey("Snapshot")) {
+                         if(versionSettings.get("Snapshot") instanceof StringTag) {
+                             if(((StringTag) versionSettings.get("Snapshot")).getValue().equals("1")) {
+                                 this.snapshot = true;
+                             }
+                             if(((StringTag) versionSettings.get("Snapshot")).getValue().equals("0")) {
+                                 this.snapshot = false;
+                             } else {
+                                 throw new DataException("Invaild Value: Value must be 0 or 1.");
+                             }
+                         }
+                    }
+                    if(this.version == null) {
+                        this.version = "1.8.8";
+                    }
+                    this.worldVersion = new Triplet<>(this.id, this.version, this.snapshot);
                 }
                 if (this.worldVersion == null) {
                     this.worldVersion = new Triplet<>(0, "1.8.8", false);
@@ -332,10 +331,10 @@ public final class Level {
 
         private final NBTOutputStream stream;
         private final Map<String, Tag> levelData;
-        private final TreeMap<String, Object> gameRules;
+        private final Map<String, Tag> gameRules;
         private final File location;
 
-        private Exporter(NBTOutputStream stream, Map<String, Tag> levelData, TreeMap<String, Object> gameRules, File location) {
+        private Exporter(NBTOutputStream stream, Map<String, Tag> levelData, Map<String, Tag> gameRules, File location) {
             this.stream = stream;
             this.levelData = levelData;
             this.gameRules = gameRules;
@@ -349,152 +348,7 @@ public final class Level {
          * @throws DataException If a disallowed {@link Tag} was used
          */
         public void write() throws DataException, IOException {
-
-            if (this.gameRules.get("commandBlockOutput") == null) {
-                this.gameRules.put("commandBlockOutput", true);
-            }
-            if (this.gameRules.get("doDaylightCycle") == null) {
-                this.gameRules.put("doDaylightCycle", true);
-            }
-            if (this.gameRules.get("doEntityDrops") == null) {
-                this.gameRules.put("doEntityDrops", true);
-            }
-            if (this.gameRules.get("doFireTick") == null) {
-                this.gameRules.put("doFireTick", true);
-            }
-            if (this.gameRules.get("doMobLoot") == null) {
-                this.gameRules.put("doMobLoot", true);
-            }
-            if (this.gameRules.get("doMobSpawning") == null) {
-                this.gameRules.put("doMobSpawning", true);
-            }
-            if (this.gameRules.get("doTileDrops") == null) {
-                this.gameRules.put("doTileDrops", true);
-            }
-            if (this.gameRules.get("keepInventory") == null) {
-                this.gameRules.put("keepInventory", false);
-            }
-            if (this.gameRules.get("logAdminCommands") == null) {
-                this.gameRules.put("logAdminCommands", true);
-            }
-            if (this.gameRules.get("mobGriefing") == null) {
-                this.gameRules.put("mobGriefing", true);
-            }
-            if (this.gameRules.get("naturalRegeneration") == null) {
-                this.gameRules.put("naturalRegeneration", true);
-            }
-            if (this.gameRules.get("randomTickSpeed") == null) {
-                this.gameRules.put("randomTickSpeed", 3);
-            }
-            if (this.gameRules.get("reducedDebugInfo") == null) {
-                this.gameRules.put("reducedDebugInfo", false);
-            }
-            if (this.gameRules.get("sendCommandFeedback") == null) {
-                this.gameRules.put("sendCommandFeedback", true);
-            }
-            if (this.gameRules.get("showDeathMessages") == null) {
-                this.gameRules.put("showDeathMessages", true);
-            }
-
-            Iterator<Map.Entry<String, Object>> iterator = this.gameRules.entrySet().iterator();
-            Map<String, Tag> gameRuleData = new HashMap<>();
-
-            while (iterator.hasNext()) {
-                Map.Entry<String, Object> next = iterator.next();
-                if (next.getValue() instanceof Boolean) {
-                    gameRuleData.put(next.getKey(), new StringTag(next.getKey(), String.valueOf((boolean) next.getValue())));
-                }
-                if (next.getValue() instanceof Integer) {
-                    if (next.getKey().equals("randomTickSpeed")) {
-                        gameRuleData.put(next.getKey(), new StringTag(next.getKey(), String.valueOf((int) next.getValue())));
-                    }
-                }
-            }
-
-            CompoundTag gameRuleTag = new CompoundTag("GameRules", gameRuleData);
-
-            Map<String, Tag> data = new HashMap<>();
-
-            //<editor-fold desc="Level Settings">
-            for (Map.Entry<String, Tag> entry : this.levelData.entrySet()) {
-                String key = entry.getKey();
-                data.put("GameRules", gameRuleTag);
-
-                Tag type = entry.getValue();
-
-                if (type instanceof ByteTag) {
-                    if (!(entry.getValue().getValue() instanceof Byte)) {
-                        throw new DataException("Value " + key + " is not a byte");
-                    }
-                    data.put(key, new ByteTag(key, (byte) entry.getValue().getValue()));
-                }
-                if (type instanceof ByteArrayTag) {
-                    if (!(entry.getValue().getValue() instanceof Byte[])) {
-                        throw new DataException("Value " + key + " is not a byte array");
-                    }
-                    data.put(key, new ByteArrayTag(key, (byte[]) entry.getValue().getValue()));
-                }
-                if (type instanceof DoubleTag) {
-                    if (!(entry.getValue().getValue() instanceof Double)) {
-                        throw new DataException("Value " + key + " is not a double");
-                    }
-                    data.put(key, new DoubleTag(key, (double) entry.getValue().getValue()));
-                }
-                if (type instanceof EndTag) {
-                    throw new DataException("End Tags are not allowed!");
-                }
-                if (type instanceof FloatTag) {
-                    if (!(entry.getValue().getValue() instanceof Float)) {
-                        throw new DataException("Value " + key + " is not a float!");
-                    }
-                    data.put(key, new FloatTag(key, (float) entry.getValue().getValue()));
-                }
-                if (type instanceof IntTag) {
-                    if (!(entry.getValue().getValue() instanceof Integer)) {
-                        throw new DataException("Value " + key + " is not an integer!");
-                    }
-                    data.put(key, new IntTag(key, (int) entry.getValue().getValue()));
-                }
-                if (type instanceof IntArrayTag) {
-                    if (!(entry.getValue().getValue() instanceof Integer[])) {
-                        throw new DataException("Value " + key + " is not an integer array!");
-                    }
-                    data.put(key, new IntArrayTag(key, (int[]) entry.getValue().getValue()));
-                }
-                if (type instanceof ListTag) {
-                    throw new DataException("List Tags are not allowed!");
-                }
-                if (type instanceof LongTag) {
-                    if (!(entry.getValue().getValue() instanceof Long)) {
-                        throw new DataException("Value " + key + " is not a long");
-                    }
-                    data.put(key, new LongTag(key, (long) entry.getValue().getValue()));
-                }
-                if (type instanceof ShortTag) {
-                    if (!(entry.getValue().getValue() instanceof Short)) {
-                        throw new DataException("Value " + key + " is not a short");
-                    }
-                    data.put(key, new ShortTag(key, (short) entry.getValue().getValue()));
-                }
-                if (type instanceof StringTag) {
-                    if (!(entry.getValue().getValue() instanceof String)) {
-                        throw new DataException("value " + key + " is not a string");
-                    }
-                    data.put(key, new StringTag(key, (String) entry.getValue().getValue()));
-                }
-            }
-            //</editor-fold>
-
-            data.put(gameRuleTag.getName(), gameRuleTag);
-
-            for (Map.Entry<String, Object> writableData : this.gameRules.entrySet()) {
-                data.put(writableData.getKey(), new StringTag(writableData.getKey(), String.valueOf(writableData.getValue())));
-            }
-
-            CompoundTag levelInformation = new CompoundTag("Data", data);
-
-            this.stream.writeTag(levelInformation);
-            this.stream.close();
+            //TODO
         }
 
         public File getDestination() {
