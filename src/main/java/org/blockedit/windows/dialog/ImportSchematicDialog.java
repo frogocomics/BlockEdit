@@ -29,7 +29,6 @@ import java.net.URISyntaxException;
 import javax.annotation.Nullable;
 
 import javafx.geometry.Orientation;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -39,6 +38,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Separator;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
@@ -54,17 +54,15 @@ import javafx.stage.Stage;
 public class ImportSchematicDialog extends AbstractDialog {
 
     private Stage stage = new Stage();
-    private Group group = new Group();
-    private Scene schematicDialog;
+    private Pane pane = new Pane();
     private MenuBar tools = new MenuBar();
-    private GridPane grid;
     private Button addSchematic = new Button("Add File");
 
     @Override
     public Stage getOrCreateDialog(double width, double height) {
-        this.grid = new GridPane();
-        this.schematicDialog = new Scene(this.group, Color.WHITE);
-        this.group.getChildren().addAll(this.grid);
+        GridPane grid = new GridPane();
+        Scene schematicDialog = new Scene(this.pane, Color.WHITE);
+        this.pane.getChildren().addAll(grid);
         @Nullable final StringBuilder schematicFilePathBuilder = new StringBuilder();
         //<editor-fold desc="Set the menubar">
         Menu getFilesMenu = new Menu("Get Schematics");
@@ -76,7 +74,7 @@ public class ImportSchematicDialog extends AbstractDialog {
         this.tools.getMenus().addAll(getFilesMenu);
         //</editor-fold>
         //<editor-fold desc="Set stage">
-        this.stage.setScene(this.schematicDialog);
+        this.stage.setScene(schematicDialog);
         this.stage.setWidth(width);
         this.stage.setHeight(height);
         this.stage.setMinWidth(width / 2);
@@ -97,10 +95,10 @@ public class ImportSchematicDialog extends AbstractDialog {
         //<editor-fold desc="Set grid layout">
         Region space = new Region();
         space.setPrefHeight(this.stage.getHeight() / 10);
-        this.grid.add(this.tools, 0, 0);
-        this.grid.add(space, 0, 1);
-        this.grid.add(new Separator(Orientation.HORIZONTAL), 0, 2);
-        this.grid.add(this.addSchematic, 0, 3);
+        grid.add(this.tools, 0, 0);
+        grid.add(space, 0, 1);
+        grid.add(new Separator(Orientation.HORIZONTAL), 0, 2);
+        grid.add(this.addSchematic, 0, 3);
         GridPane.setHgrow(this.tools, Priority.ALWAYS);
         GridPane.setVgrow(this.tools, Priority.ALWAYS);
         GridPane.setHgrow(space, Priority.ALWAYS);

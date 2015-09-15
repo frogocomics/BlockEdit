@@ -131,7 +131,7 @@ public class MainGui extends Application {
             Stage dialog = schematicDialog.getOrCreateDialog(UserInformation.getWindowWidth() / 2, UserInformation.getWindowHeight() / 2);
             dialog.initStyle(StageStyle.DECORATED);
             dialog.initOwner(stage);
-            schematicDialog.getOrCreateDialog(UserInformation.getWindowWidth() / 2, UserInformation.getWindowHeight() / 2.5).show();
+            dialog.show();
             for (Node node : this.container.getChildren()) {
                 node.setDisable(true);
             }
