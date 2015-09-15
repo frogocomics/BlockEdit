@@ -15,29 +15,95 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2677fe0-5329-4fd7-ab79-19e9b329d02b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BasicGZipStorageFormat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/block/Block.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BlockStorageFormat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/world/Chunk.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/exception/DataBuildException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/exception/DataNotInitializedException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/exception/DataNotOverloadableException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/exception/DataReadException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/utils/Format.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_52.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/exception/ParseException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/world/Section.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/world/WorldVersion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/core/block/BlockTypes.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/core/block/BlockTypes.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/block/BlockDirection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/block/BlockUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/utils/annotation/Builder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/CustomBlocksDialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/utils/annotation/Developmental.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/utils/annotation/Test.java" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\favicon128.ico" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\favicon16.ico" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\favicon256.ico" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\favicon32.ico" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\favicon64.ico" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\guava-16.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\javatuples-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\maven-artifact-2.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\maven-artifact-manager-2.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\maven-model-2.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\maven-plugin-registry-2.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\maven-profile-2.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\maven-project-2.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\maven-repository-metadata-2.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\maven-settings-2.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\nbt-1.0.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\core\MalformedWorldException.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\core\biome\BiomeTypes.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\core\block\BlockTypes.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\core\world\World.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\core\world\WorldLoader.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\utils\Author.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\utils\ExceptionDialog.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\utils\InternetUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\utils\UserInformation.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\utils\VersionReference.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\utils\contribution\ContributionLevel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\windows\BlockInformationPane.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\windows\MainGui.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\windows\dialog\AbstractDialog.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\windows\dialog\ImportSchematicDialog.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\org\blockedit\windows\dialog\package-info.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\project.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\out\artifacts\BlockEdit_Test\wagon-provider-api-1.0-beta-2.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\java\org\blockedit\utils\InternetUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\authlib-1.5.21.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\codecjorbis-20101023.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\codecwav-20101023.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\commons-codec-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\commons-compress-1.8.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\commons-io-2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\commons-lang3-3.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\commons-logging-1.1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\gson-2.2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\guava-17.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\httpclient-4.3.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\httpcore-4.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\icu4j-core-mojang-51.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\jinput-2.0.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\jinput-platform-2.0.5-natives-windows.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\jopt-simple-4.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\jutils-1.0.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\libraryjavasound-20101123.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\librarylwjglopenal-20100824.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\log4j-api-2.0-beta9.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\log4j-core-2.0-beta9.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\lwjgl-2.9.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\lwjgl-platform-2.9.1-natives-windows.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\lwjgl_util-2.9.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\netty-all-4.0.15.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\realms-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\soundsystem-20120107.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\trove4j-3.0.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\twitch-6.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\twitch-external-platform-4.5-natives-windows-64.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\twitch-platform-6.5-natives-windows-64.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeff\IdeaProjects\BlockEdit\src\main\library\vecmath-1.5.2.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/windows/dialog/AbstractDialog.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/windows/dialog/AbstractDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/core/block/Block$BlockData$Builder.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/core/block/Block$BlockData$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/core/block/Block$BlockData.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/core/block/Block$BlockData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/core/block/Block$Builder.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/core/block/Block$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/core/block/Block.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/core/block/Block.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/core/output/BlockStorageFormat.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/core/output/BlockStorageFormat.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/utils/ExceptionDialog.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/utils/ExceptionDialog.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/windows/dialog/ImportSchematicDialog.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/windows/dialog/ImportSchematicDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/core/world/Level$Builder.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/core/world/Level$Builder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/core/world/Level$Exporter.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/core/world/Level$Exporter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/core/world/Level$Loader.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/core/world/Level$Loader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/core/world/Level.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/core/world/Level.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/blockedit/windows/MainGui.class" afterPath="$PROJECT_DIR$/target/classes/org/blockedit/windows/MainGui.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BlockEdit.iml" afterPath="$PROJECT_DIR$/BlockEdit.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/blockedit/core/block/BlockTypes.java" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/block/BlockTypes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/blockedit/core/world/Level.java" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/world/Level.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/AbstractDialog.java" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/AbstractDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/blockedit/core/block/Block.java" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/block/Block.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BlockStorageFormat.java" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BlockStorageFormat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/blockedit/utils/ExceptionDialog.java" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/utils/ExceptionDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/ImportSchematicDialog.java" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/ImportSchematicDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/blockedit/windows/MainGui.java" afterPath="$PROJECT_DIR$/src/main/java/org/blockedit/windows/MainGui.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -64,103 +130,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="MainGui.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/MainGui.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="108" column="23" selection-start-line="108" selection-start-column="23" selection-end-line="108" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomBlocksDialog.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/CustomBlocksDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.66587114">
+              <caret line="72" column="39" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#4386#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1897#1927#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlockStorageFormat.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BlockStorageFormat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="205" column="59" selection-start-line="205" selection-start-column="59" selection-end-line="205" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Block.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/block/Block.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+              <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
               <folding>
-                <element signature="e#0#4558#0" expanded="true" />
+                <element signature="e#0#5266#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#1977#1978#0" expanded="true" />
+                <element signature="e#2024#2025#0" expanded="true" />
+                <element signature="e#2157#2158#0" expanded="true" />
+                <element signature="e#2187#2188#0" expanded="true" />
+                <element signature="e#2370#2371#0" expanded="true" />
+                <element signature="e#2406#2407#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="AbstractDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/AbstractDialog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+              <caret line="35" column="73" selection-start-line="35" selection-start-column="73" selection-end-line="35" selection-end-column="73" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicGZipStorageFormat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BasicGZipStorageFormat.java">
+      <file leaf-file-name="ImportSchematicDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/ImportSchematicDialog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlockStorageFormat.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BlockStorageFormat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14081146">
-              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#9052#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Format.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/Format.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+              <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataReadException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/exception/DataReadException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#935#0" expanded="false" />
-                <element signature="e#901#902#0" expanded="false" />
-                <element signature="e#931#932#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataBuildException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/exception/DataBuildException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#951#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Chunk.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/world/Chunk.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#4596#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#2438#2439#0" expanded="false" />
-                <element signature="e#2474#2475#0" expanded="false" />
-                <element signature="e#2525#2526#0" expanded="false" />
-                <element signature="e#2580#2581#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -172,6 +210,7 @@
       <list>
         <option value="package-info" />
         <option value="Enum" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -187,27 +226,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/core/ApplicationStatus.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/Skin.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/DarkClean.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/project.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/core/MalformedWorldException.java" />
-        <option value="$PROJECT_DIR$/License.txt" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/UserInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/Reference.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/VersionReference.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/AbstractDialog.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/package-info.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/MainGui.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/utils/InternetUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/utils/UserInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/BlockInformationPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/utils/Author.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/utils/ExceptionDialog.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/utils/contribution/ContributionLevel.java" />
         <option value="/CSS Fragment (ImportSchematicDialog.java:2384).css" />
-        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/ImportSchematicDialog.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/core/world/WorldLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/core/world/DataException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/evilco/mc/nbt/tag/TagCompound.java" />
@@ -235,9 +263,20 @@
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/utils/BasicGZipStorageFormat.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/utils/BlockStorageFormat.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BasicGZipStorageFormat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/utils/ExceptionDialog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/utils/annotation/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/utils/annotation/Developmental.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/utils/annotation/Builder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/core/block/BlockDirection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/core/block/BlockUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/core/block/Block.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/AbstractDialog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/ImportSchematicDialog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/MainGui.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BlockStorageFormat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/core/block/Block.java" />
+        <option value="/RegExp Fragment (CustomBlocksDialog.java:3772).regexp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/CustomBlocksDialog.java" />
       </list>
     </option>
   </component>
@@ -308,9 +347,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="498" />
-    <option name="y" value="261" />
-    <option name="width" value="1932" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -358,7 +397,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -374,20 +413,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="BlockEdit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PowerNbt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlockEdit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -462,6 +487,48 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="blockedit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="windows" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerNbt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlockEdit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockedit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="windows" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dialog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -529,7 +596,155 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contribution" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerNbt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlockEdit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockedit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerNbt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlockEdit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockedit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exception" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerNbt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlockEdit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockedit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerNbt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlockEdit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockedit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="world" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -592,11 +807,101 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockedit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="block" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerNbt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlockEdit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blockedit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="biome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerNbt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlockEdit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerNbt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlockEdit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blocks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -614,7 +919,7 @@
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last.edited.regexp" value="cdaum@sd38.bc.ca.c.c.c.c" />
+    <property name="last.edited.regexp" value="4324234-dgfdgdf.blk" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -626,27 +931,7 @@
       <recent name="C:\Users\Jeff\IdeaProjects\PowerNbt\src\main\java\org\blockedit\windows" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Block">
-    <configuration default="false" name="SplashScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.blockedit.windows.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.blockedit.windows.SplashScreen" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="PowerNbt" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.MainGui">
     <configuration default="false" name="WorldLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -725,6 +1010,32 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="BlockEdit" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="org.blockedit.utils in BlockEdit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.blockedit.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="BlockEdit" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.blockedit.utils" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1028,19 +1339,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.SplashScreen" />
-      <item index="1" class="java.lang.String" itemvalue="Application.WorldLoader" />
-      <item index="2" class="java.lang.String" itemvalue="Application.MainGui" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Level" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Block" />
+      <item index="0" class="java.lang.String" itemvalue="Application.WorldLoader" />
+      <item index="1" class="java.lang.String" itemvalue="Application.MainGui" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Level" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Block" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.org.blockedit.utils in BlockEdit" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Block" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Level" />
-        <item index="2" class="java.lang.String" itemvalue="Application.MainGui" />
-        <item index="3" class="java.lang.String" itemvalue="Application.WorldLoader" />
-        <item index="4" class="java.lang.String" itemvalue="Application.SplashScreen" />
+        <item index="0" class="java.lang.String" itemvalue="Application.MainGui" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Block" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.org.blockedit.utils in BlockEdit" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Level" />
+        <item index="4" class="java.lang.String" itemvalue="Application.WorldLoader" />
       </list>
     </recent_temporary>
   </component>
@@ -1097,12 +1408,15 @@
       <workItem from="1441951815603" duration="3856000" />
       <workItem from="1442017391458" duration="17622000" />
       <workItem from="1442083993913" duration="18619000" />
-      <workItem from="1442176206503" duration="972000" />
+      <workItem from="1442176206503" duration="15699000" />
+      <workItem from="1442273527876" duration="970000" />
+      <workItem from="1442275287752" duration="717000" />
+      <workItem from="1442281636284" duration="7809000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245988000" />
+    <option name="totallyTimeSpent" value="270211000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1114,21 +1428,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="498" y="261" width="1932" height="1048" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3249139" sideWeight="0.49786097" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32376578" sideWeight="0.49786097" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.50429183" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2593583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.63949484" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.62227327" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.016630901" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2224599" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14545454" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1143,7 +1457,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39954075" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868758" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1188,7 +1502,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1197,98 +1511,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/InternetUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45708954">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/BlockInformationPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#1892#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#1746#1747#0" expanded="false" />
-            <element signature="e#1799#1800#0" expanded="false" />
-            <element signature="e#1841#1842#0" expanded="false" />
-            <element signature="e#1888#1889#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/VersionReference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2313433">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/contribution/ContributionLevel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74940336">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/UserInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/MainGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="122" column="37" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/ExceptionDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3436464">
-          <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14888337">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/AbstractDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37198067">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/ImportSchematicDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1575179">
-          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/world/WorldLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/evilco/mc/nbt/1.0.2/nbt-1.0.2.jar!/com/evilco/mc/nbt/tag/TagByteArray.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1875">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/exception/DataException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09756097">
@@ -1419,24 +1641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
-          <folding>
-            <element signature="e#3955#3956#0" expanded="false" />
-            <element signature="e#4007#4008#0" expanded="false" />
-            <element signature="e#4145#4146#0" expanded="false" />
-            <element signature="e#4197#4198#0" expanded="false" />
-            <element signature="e#4350#4351#0" expanded="false" />
-            <element signature="e#4402#4403#0" expanded="false" />
-            <element signature="e#4752#4753#0" expanded="false" />
-            <element signature="e#4792#4793#0" expanded="false" />
-            <element signature="e#5142#5143#0" expanded="false" />
-            <element signature="e#5195#5196#0" expanded="false" />
-            <element signature="e#5420#5421#0" expanded="false" />
-            <element signature="e#5470#5471#0" expanded="false" />
-            <element signature="e#8065#8066#0" expanded="false" />
-            <element signature="e#8107#8108#0" expanded="false" />
-            <element signature="e#12456#12457#0" expanded="false" />
-            <element signature="e#12500#12501#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1458,14 +1662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#4596#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2438#2439#0" expanded="false" />
-            <element signature="e#2474#2475#0" expanded="false" />
-            <element signature="e#2525#2526#0" expanded="false" />
-            <element signature="e#2580#2581#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1518,14 +1714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/block/BlockTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0739857">
-          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/jre/lib/ext/sunjce_provider.jar!/com/sun/crypto/provider/CipherCore.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.85918856">
@@ -1533,41 +1721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/Format.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/exception/DataReadException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#935#0" expanded="false" />
-            <element signature="e#901#902#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/exception/DataBuildException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#951#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1578,34 +1735,148 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BasicGZipStorageFormat.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/exception/DataReadException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/ExceptionDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/annotation/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/2.0.3/jsr305-2.0.3.jar!/javax/annotation/ParametersAreNonnullByDefault.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12562814">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/annotation/Builder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/block/BlockDirection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19323671">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/Format.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2415459">
+          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/block/BlockTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9806763">
+          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BasicGZipStorageFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.021479713">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/block/BlockUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16706444">
+          <caret line="23" column="101" selection-start-line="23" selection-start-column="101" selection-end-line="23" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/utils/annotation/Developmental.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14319809">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/AbstractDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="73" selection-start-line="35" selection-start-column="73" selection-end-line="35" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/ImportSchematicDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/MainGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="108" column="23" selection-start-line="108" selection-start-column="23" selection-end-line="108" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BlockStorageFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="205" column="59" selection-start-line="205" selection-start-column="59" selection-end-line="205" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/block/Block.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
           <folding>
-            <element signature="e#0#4558#0" expanded="true" />
+            <element signature="e#0#5266#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1977#1978#0" expanded="true" />
+            <element signature="e#2024#2025#0" expanded="true" />
+            <element signature="e#2157#2158#0" expanded="true" />
+            <element signature="e#2187#2188#0" expanded="true" />
+            <element signature="e#2370#2371#0" expanded="true" />
+            <element signature="e#2406#2407#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/core/output/BlockStorageFormat.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/blockedit/windows/dialog/CustomBlocksDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14081146">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.66587114">
+          <caret line="72" column="39" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
           <folding>
-            <element signature="e#0#9052#0" expanded="true" />
+            <element signature="e#0#4386#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1897#1927#0" expanded="true" />
           </folding>
         </state>
       </provider>

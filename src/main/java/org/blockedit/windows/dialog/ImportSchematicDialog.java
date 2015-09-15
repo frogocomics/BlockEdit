@@ -17,16 +17,26 @@ BlockEdit, a general Minecraft program that is in heavy development
  */
 package org.blockedit.windows.dialog;
 
-import com.google.common.base.Optional;
+import org.blockedit.utils.ExceptionDialog;
+import org.blockedit.utils.UserInformation;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import javax.annotation.Nullable;
 
 import javafx.geometry.Orientation;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Separator;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -35,17 +45,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import org.blockedit.utils.ExceptionDialog;
-import org.blockedit.utils.UserInformation;
-
-import javax.annotation.Nullable;
-
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 
 /**
  * A dialog used to select <a href="http://minecraft.gamepedia.com/Schematic_file_format">.schematic</a> file.
@@ -125,38 +124,6 @@ public class ImportSchematicDialog extends AbstractDialog {
         });
         this.tools.setPrefWidth(stage.getWidth());
         return this.stage;
-    }
-
-    @Override
-    public Optional<Stage> getDialog() {
-        if(this.stage == null) {
-            return Optional.absent();
-        } else {
-            return Optional.of(this.stage);
-        }
-    }
-
-    @Override
-    public void setDialog(Stage dialog) {
-        this.stage = dialog;
-    }
-
-    @Override
-    public Scene getScene() {
-        return this.schematicDialog;
-    }
-
-    @Override
-    public void setScene(Scene scene) {
-        this.schematicDialog = scene;
-    }
-
-    public Optional<GridPane> getLayout() {
-        if(this.grid == null) {
-            return Optional.absent();
-        } else {
-            return Optional.of(this.grid);
-        }
     }
 
     private MenuItem createLink(String link, String name) {

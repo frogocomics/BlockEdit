@@ -60,6 +60,11 @@
             <artifactId>bcprov-jdk15on</artifactId>
             <version>1.52</version>
         </dependency>
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>8.40.9</version>
+        </dependency>
     </dependencies>
     <developers>
         <developer>

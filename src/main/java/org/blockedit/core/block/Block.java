@@ -26,7 +26,9 @@ import org.javatuples.Quintet;
 
 import java.io.File;
 import java.io.Serializable;
-import java.util.Map;
+import java.util.Optional;
+
+import javafx.beans.property.SimpleStringProperty;
 
 public class Block implements Serializable {
 
@@ -35,17 +37,25 @@ public class Block implements Serializable {
     private String displayName;
     private boolean isModded = false;
     private BlockData[] blockData;
+    private SimpleStringProperty displayNameProperty;
+    private SimpleStringProperty locationProperty;
 
     private Block(Quintet<Integer, String, String, Boolean, Block.BlockData[]> blockData) {
         this.id = blockData.getValue0();
         this.name = blockData.getValue1();
         this.displayName = blockData.getValue2();
+        this.displayNameProperty = new SimpleStringProperty(blockData.getValue2());
         this.isModded = blockData.getValue3();
         this.blockData = blockData.getValue4();
+        this.locationProperty = new SimpleStringProperty(String.valueOf(this.id) + "-" + this.name);
     }
 
     public BlockStorageFormat getExporter() {
         return new BlockStorageFormat();
+    }
+
+    public SimpleStringProperty getDisplayNameProperty() {
+        return this.displayNameProperty;
     }
 
     public int getId() {
@@ -64,10 +74,18 @@ public class Block implements Serializable {
         return this.isModded;
     }
 
+    public Optional<SimpleStringProperty> getLocationProperty() {
+        if(new File(this.locationProperty.getValue()).exists()) {
+            return Optional.of(this.locationProperty);
+        }
+        return Optional.empty();
+    }
+
     public BlockData[] getBlockData() {
         return this.blockData;
     }
 
+    @org.blockedit.utils.annotation.Builder
     public static class Builder {
 
         private int id = 0;
@@ -96,21 +114,19 @@ public class Block implements Serializable {
             return this;
         }
 
-
         public Block.BlockData[] getBlockDataValues() {
             return this.blockData;
         }
 
+        @org.blockedit.utils.annotation.Builder
         public Block build() throws DataBuildException {
             if (name == null || displayName == null) {
                 throw new DataBuildException("name and displayName were left null!");
             }
-            for (Map.Entry<Integer, Quintet<Integer, String, String, Boolean, BlockData[]>> next : BlockTypes.getBlocks().entrySet()) {
-                if (next.getKey() == this.id) {
-                    this.isModded = true;
-                }
+            if(this.id < 197) {
+                this.isModded = true;
             }
-            return new Block(new Quintet<>(this.id, this.name, this.displayName, this.isModded, this.blockData));
+            return new Block(new Quintet<>(this.id, this.displayName, this.name, this.isModded, this.blockData));
         }
     }
 
@@ -136,6 +152,7 @@ public class Block implements Serializable {
             return new Builder();
         }
 
+        @org.blockedit.utils.annotation.Builder
         public static class Builder {
 
             private int data = 0;
@@ -155,6 +172,7 @@ public class Block implements Serializable {
                 return this;
             }
 
+            @org.blockedit.utils.annotation.Builder
             public BlockData build() {
                 return new BlockData(this.data, this.image);
             }

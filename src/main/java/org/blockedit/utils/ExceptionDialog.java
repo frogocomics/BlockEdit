@@ -17,15 +17,14 @@ BlockEdit, a general Minecraft program that is in heavy development
  */
 package org.blockedit.utils;
 
-import com.google.common.annotations.Beta;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
-
-import java.io.PrintWriter;
-import java.io.StringWriter;
 
 /**
  * A simple class that contains methods for display exceptions to users in a clean manner.
@@ -43,8 +42,28 @@ public class ExceptionDialog {
      * @param exception The exception that triggered this window to be displayed to the user
      * @return A created alert
      */
-    @Beta
     public static Alert getDialog(String message, String title, String header, Exception exception) {
+        return createDialog(message, title, header, exception);
+    }
+
+    public static Alert unexpectedException(Exception exception) {
+        return createDialog("An unexpected exception was caught! To help the developers, please copy the stack trace below and email it to frogocomics@gmail.com.", "Unexpected \u2012" + exception.getClass().getName(), "A Unexpected Exception has Occurred!", exception);
+    }
+
+    public static Alert expectedException(Exception exception) {
+        return createDialog("An expected exception was found! Try reinstalling the software, or maybe your operating system is unsuitable for the application. If so, please copy the stack trace below and email to frogocomics@gmail.com.", "Exception " + exception.getClass().getName(), "A Exception has Occurred!", exception);
+    }
+
+    /**
+     * Create a exception alert that is displayed to the user.
+     *
+     * @param message The message to show the user
+     * @param title The title of the window
+     * @param header The message header
+     * @param exception The exception that triggered this window to be displayed to the user
+     * @return A created alert
+     */
+    private static Alert createDialog(String message, String title, String header, Exception exception) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(header);
@@ -53,7 +72,7 @@ public class ExceptionDialog {
         PrintWriter pw = new PrintWriter(sw);
         String exceptionText = exception.toString();
         Label label = new Label("The exception stacktrace was:");
-        TextArea exceptionArea = new TextArea(exceptionText);
+        TextArea exceptionArea = new TextArea(exceptionText + "\n\n==User Information==\njava.version = " + System.getProperty("java.version") + "\nos.name = " + System.getProperty("os.name") + "\nos.arch = " + System.getProperty("os.arch") + "\nos.version = " + System.getProperty("os.version"));
         exceptionArea.setEditable(false);
         exceptionArea.setWrapText(true);
         exceptionArea.setMaxWidth(UserInformation.getWindowWidth() / 2);

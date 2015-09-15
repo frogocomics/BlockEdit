@@ -17,8 +17,6 @@ BlockEdit, a general Minecraft program that is in heavy development
  */
 package org.blockedit.windows.dialog;
 
-import com.google.common.base.Optional;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -36,33 +34,4 @@ public abstract class AbstractDialog {
      * @return The created dialog
      */
     public abstract Stage getOrCreateDialog(double width, double height);
-
-    /**
-     * Get the dialog if it has been created. Create with {@link AbstractDialog#getOrCreateDialog(double, double)} or
-     * {@link AbstractDialog#setDialog(Stage)} to use your own dialog.
-     *
-     * @return The dialog, if it has been created
-     */
-    public abstract Optional<Stage> getDialog();
-
-    /**
-     * Set the dialog yourself.
-     *
-     * @param dialog The dialog that is to overwrite the old version
-     */
-    public abstract void setDialog(Stage dialog);
-
-    /**
-     * Get the scene of the dialog.
-     *
-     * @return The scene
-     */
-    public abstract Scene getScene();
-
-    /**
-     * Set the scene.
-     *
-     * @param scene The scene
-     */
-    public abstract void setScene(Scene scene);
 }

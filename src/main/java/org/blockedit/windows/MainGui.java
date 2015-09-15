@@ -17,19 +17,30 @@ BlockEdit, a general Minecraft program that is in heavy development
  */
 package org.blockedit.windows;
 
+import org.blockedit.utils.UserInformation;
+import org.blockedit.utils.VersionReference;
+import org.blockedit.windows.dialog.CustomBlocksDialog;
+import org.blockedit.windows.dialog.ImportSchematicDialog;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.ToolBar;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.blockedit.utils.UserInformation;
-import org.blockedit.utils.VersionReference;
-import org.blockedit.windows.dialog.ImportSchematicDialog;
 
 /**
  * Represents the main gui of the application.
@@ -106,6 +117,7 @@ public class MainGui extends Application {
     public MenuBar getOrCreateMenubar() {
         Menu fileMenu = new Menu("File");
         Menu editMenu = new Menu("Edit");
+        Menu customizeMenu = new Menu("Customize");
         Menu viewMenu = new Menu("View");
         Menu helpMenu = new Menu("Help");
         //<editor-fold desc="Menu File">
@@ -116,16 +128,17 @@ public class MainGui extends Application {
         MenuItem schematicMenuItem = new MenuItem("Schematic");
         schematicMenuItem.setOnAction(event -> {
             ImportSchematicDialog schematicDialog = new ImportSchematicDialog();
-            schematicDialog.getDialog().get().initStyle(StageStyle.DECORATED);
-            schematicDialog.getDialog().get().initOwner(stage);
+            Stage dialog = schematicDialog.getOrCreateDialog(UserInformation.getWindowWidth() / 2, UserInformation.getWindowHeight() / 2);
+            dialog.initStyle(StageStyle.DECORATED);
+            dialog.initOwner(stage);
             schematicDialog.getOrCreateDialog(UserInformation.getWindowWidth() / 2, UserInformation.getWindowHeight() / 2.5).show();
             for (Node node : this.container.getChildren()) {
                 node.setDisable(true);
             }
-            schematicDialog.getDialog().get().setOnCloseRequest(event1 -> {
-                 for(Node node : this.container.getChildren()) {
-                     node.setDisable(false);
-                 }
+            dialog.setOnCloseRequest(event1 -> {
+                for (Node node : this.container.getChildren()) {
+                    node.setDisable(false);
+                }
             });
         });
         MenuItem bobV2MenuItem = new MenuItem("BO2 File");
@@ -160,7 +173,25 @@ public class MainGui extends Application {
         });
         fileMenu.getItems().addAll(importSubMenu, saveMenuItem, saveAsMenuItem, exportMenuItem, exportAsMenuItem, new SeparatorMenuItem(), exitMenuItem);
         //</editor-fold>
-        this.menu.getMenus().addAll(fileMenu, editMenu, viewMenu, helpMenu);
+        //<editor-fold desc="Menu Customize">
+        MenuItem blockCustomizeItem = new MenuItem("Custom Blocks");
+        blockCustomizeItem.setOnAction(event -> {
+            CustomBlocksDialog blocksDialog = new CustomBlocksDialog();
+            Stage dialog = blocksDialog.getOrCreateDialog(UserInformation.getWindowWidth() / 2, UserInformation.getWindowHeight() / 2);
+            dialog.initOwner(stage);
+            for(Node node : this.container.getChildren()) {
+                node.setDisable(true);
+            }
+            dialog.setOnCloseRequest(event1 -> {
+                for(Node node : this.container.getChildren()) {
+                    node.setDisable(false);
+                }
+            });
+            dialog.show();
+        });
+        customizeMenu.getItems().add(blockCustomizeItem);
+        //</editor-fold>
+        this.menu.getMenus().addAll(fileMenu, editMenu, customizeMenu, viewMenu, helpMenu);
         return this.menu;
     }
 
