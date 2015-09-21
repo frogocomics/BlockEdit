@@ -1,0 +1,74 @@
+/*
+ * BlockEdit, a general purpose software to edit Minecraft
+ * Copyright (c) 2015. Jeff Chen and others
+ *
+ * This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ *  General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <http://www.gnu.org/licenses/>
+ */
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane#tabpane {
+    -fx-tab-min-width: 60px;
+}
+
+.tab-pane#tabpane .tab {
+    -fx-background-color: #F2F3F4;
+    -fx-effect: innershadow( gaussian , rgba(0,0,0,0.2) , 10,0,0,0 );
+    -fx-border-radius: 0 0 0 0;
+}
+
+.tab-pane#tabpane .tab:selected {
+    -fx-background-color: #21ABCD;
+    -fx-effect: innershadow( gaussian , rgba(0,0,0,0.2) , 10,0,0,0 );
+    -fx-border-radius: 0 0 0 0;
+}
+
+.tab-pane#tabpane #infopane {
+    -fx-background-color: #F2F3F4;
+}
+
+.tab-pane:top#tabpane *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em;
+}
+
+.tab .tab-label {
+    -fx-alignment: center;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+#debugConsole {
+    -fx-font-family: "Inconsolata", monospace;
+    -fx-font-weight: normal;
+    -fx-font-smoothing-type: lcd;
+}
+
+.menu-item {
+    -fx-font-family: "Open Sans", "Arial", sans-serif;
+}
+
+.menu-item:focused {
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: #21ABCD;
+    -fx-effect: innershadow( gaussian , rgba(0,0,0,0.2) , 10,0,0,0 );
+}
+

@@ -17,13 +17,18 @@ BlockEdit, a general Minecraft program that is in heavy development
  */
 package org.blockedit.windows;
 
+import org.blockedit.utils.Debugger;
+import org.blockedit.utils.MiniConsole;
 import org.blockedit.utils.UserInformation;
 import org.blockedit.utils.VersionReference;
 import org.blockedit.windows.dialog.CustomBlocksDialog;
 import org.blockedit.windows.dialog.ImportSchematicDialog;
 
+import java.io.File;
+
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -32,11 +37,14 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Separator;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.ToolBar;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -50,7 +58,7 @@ import javafx.stage.StageStyle;
 public class MainGui extends Application {
 
     public VBox container = new VBox();
-    public Scene scene = new Scene(container, UserInformation.getWindowWidth(), UserInformation.getWindowHeight(), Color.WHITE);
+    public Scene scene;
     public MenuBar menu = new MenuBar();
     public ToolBar toolBar = new ToolBar();
     public BorderPane pane = new BorderPane();
@@ -61,34 +69,51 @@ public class MainGui extends Application {
         launch(args);
     }
 
+    /**
+     * Create the main gui window.
+     *
+     * @param stage The main stage
+     * @throws Exception If a unknown exception occurs. (Exceptions are not excepted to occur)
+     */
     @Override
     public void start(final Stage stage) throws Exception {
         MainGui.stage = stage;
-        this.container.getChildren().addAll(getOrCreateMenubar(), this.toolBar, this.pane);
-        this.pane.setLeft(getOrCreateTabPane());
+        this.scene = new Scene(this.container);
+        this.scene.setFill(Color.WHITE);
+        this.container.setMaxWidth(UserInformation.getWindowWidth());
+        this.container.setMaxHeight(UserInformation.getWindowHeight());
+        this.container.setId("background");
+        HBox tabContainer = new HBox();
+        this.container.getChildren().addAll(getOrCreateMenubar(), getOrCreateToolBar(), new Separator(Orientation.HORIZONTAL), this.pane);
+        Debugger debugger = Debugger.getInstance();
+        this.pane.setLeft(tabContainer);
+        Separator separator = new Separator(Orientation.VERTICAL);
+        tabContainer.getChildren().addAll(getOrCreateTabPane(), separator);
         MainGui.stage.setScene(this.scene);
         //<editor-fold desc="Set window title">
         if(VersionReference.DEV) {
-            stage.setTitle("BlockEdit Developmental - " + VersionReference.getVersion());
+            stage.setTitle("BlockEdit Developmental \u2012 " + VersionReference.getVersion());
         }
         if(VersionReference.PRE_RELEASE) {
-            stage.setTitle("BlockEdit PreRelease - " + VersionReference.getVersion());
+            stage.setTitle("BlockEdit PreRelease \u2012 " + VersionReference.getVersion());
         }
         if(VersionReference.RELEASE) {
-            stage.setTitle("BlockEdit - " + VersionReference.getVersion());
+            stage.setTitle("BlockEdit \u2012 " + VersionReference.getVersion());
         }
         //</editor-fold>
         this.scene.widthProperty().addListener((observable, oldValue, newValue) -> {
-            tabPane.setPrefWidth((Double) newValue / 5);
+            this.tabPane.setPrefWidth((Double) newValue / 4);
         });
         this.scene.heightProperty().addListener((observable, oldValue, newValue) -> {
-
+            tabPane.setPrefHeight((Double) newValue);
         });
+        debugger.start();
         MainGui.stage.setMaxWidth(UserInformation.getWindowWidth());
         MainGui.stage.setMaxHeight(UserInformation.getWindowHeight());
         MainGui.stage.setMinWidth(UserInformation.getWindowWidth() / 2.5);
         MainGui.stage.setMinHeight(UserInformation.getWindowHeight() / 2.5);
         MainGui.stage.setOnCloseRequest(event -> {
+            debugger.printEvent(event.getEventType(), this.getClass());
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Confirm Exit");
             alert.setHeaderText("Are you sure you would like to quit without saving?");
@@ -103,23 +128,38 @@ public class MainGui extends Application {
             alert.showAndWait().ifPresent(response -> {
                 if (response == saveAndExit) {
                     Platform.exit();
+                    System.exit(0);
                 }
                 if (response == exit) {
                     Platform.exit();
+                    System.exit(0);
                 } else {
                     event.consume();
                 }
             });
         });
+        this.scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Open+Sans:400,700,800italic,800,700italic,600,600italic,300,300italic&subset=latin,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext,latin-ext");
+        this.scene.getStylesheets().add("file:///" + new File("src/main/resources/style.css").getAbsolutePath().replace("\\", "/"));
         MainGui.stage.show();
+        System.out.println("BlockEdit  Copyright (C) 2015  Jeff Chen and others\n" +
+                "This program comes with ABSOLUTELY NO WARRANTY;\n" +
+                "This is free software, and you are welcome to redistribute it\n" +
+                "under certain conditions;");
+        debugger.print("Components successfully loaded");
     }
 
     public MenuBar getOrCreateMenubar() {
+        this.menu.setId("menuB");
         Menu fileMenu = new Menu("File");
+        fileMenu.setId("menu");
         Menu editMenu = new Menu("Edit");
+        editMenu.setId("menu");
         Menu customizeMenu = new Menu("Customize");
+        customizeMenu.setId("menu");
         Menu viewMenu = new Menu("View");
+        viewMenu.setId("menu");
         Menu helpMenu = new Menu("Help");
+        helpMenu.setId("menu");
         //<editor-fold desc="Menu File">
         //File
         Menu importSubMenu = new Menu("Import");
@@ -179,11 +219,11 @@ public class MainGui extends Application {
             CustomBlocksDialog blocksDialog = new CustomBlocksDialog();
             Stage dialog = blocksDialog.getOrCreateDialog(UserInformation.getWindowWidth() / 2, UserInformation.getWindowHeight() / 2);
             dialog.initOwner(stage);
-            for(Node node : this.container.getChildren()) {
+            for (Node node : this.container.getChildren()) {
                 node.setDisable(true);
             }
             dialog.setOnCloseRequest(event1 -> {
-                for(Node node : this.container.getChildren()) {
+                for (Node node : this.container.getChildren()) {
                     node.setDisable(false);
                 }
             });
@@ -192,27 +232,45 @@ public class MainGui extends Application {
         customizeMenu.getItems().add(blockCustomizeItem);
         //</editor-fold>
         this.menu.getMenus().addAll(fileMenu, editMenu, customizeMenu, viewMenu, helpMenu);
+        this.menu.getStylesheets().add("https://fonts.googleapis.com/css?family=Open+Sans:400,700,800italic,800,700italic,600,600italic,300,300italic&subset=latin,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext,latin-ext");
+        this.menu.getStylesheets().add("file:///" + new File("src/main/resources/menubar.css").getAbsolutePath().replace("\\", "/"));
         return this.menu;
     }
 
     public TabPane getOrCreateTabPane() {
         Tab inspectorTab = new Tab("Inspector");
+        Pane inspectorPane = new Pane();
         Tab worldInformationTab = new Tab("Level Information");
+        Pane worldInformationPane = new Pane();
+
+        Tab debugTab = new Tab("Debug");
+        debugTab.setClosable(false);
+        MiniConsole console = new MiniConsole();
+        console.start();
+        debugTab.setContent(console.getConsole().get());
+        console.getConsole().get().setId("debugConsole");
+
+        inspectorTab.setContent(inspectorPane);
+        worldInformationTab.setContent(worldInformationPane);
+
+        inspectorPane.setPrefHeight(UserInformation.getWindowHeight());
+        inspectorPane.setPrefWidth(UserInformation.getWindowWidth());
+        inspectorPane.setId("infopane");
+        worldInformationPane.setId("infopane");
+
         inspectorTab.setClosable(false);
         worldInformationTab.setClosable(false);
-        this.tabPane.getTabs().addAll(inspectorTab, worldInformationTab);
+        this.tabPane.getTabs().addAll(inspectorTab, worldInformationTab, debugTab);
+        this.tabPane.setId("tabpane");
+        this.tabPane.getStylesheets().add("https://fonts.googleapis.com/css?family=Inconsolata:400,700&subset=latin,latin-ext");
+        this.tabPane.getStylesheets().add("https://fonts.googleapis.com/css?family=Open+Sans:400,700,800italic,800,700italic,600,600italic,300,300italic&subset=latin,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext,latin-ext");
+        this.tabPane.getStylesheets().add("file:///" + new File("src/main/resources/tab.css").getAbsolutePath().replace("\\", "/"));
+        this.tabPane.setMaxHeight(UserInformation.getWindowHeight());
+        this.tabPane.setPrefHeight(UserInformation.getWindowHeight());
         return this.tabPane;
     }
 
-    public void setMenuBar(MenuBar menu) {
-        this.menu = menu;
-    }
-
-    public void setTabPane(TabPane pane) {
-        this.tabPane = pane;
-    }
-
-    public static Stage getWindow() {
-        return MainGui.stage;
+    public ToolBar getOrCreateToolBar() {
+        return this.toolBar;
     }
 }

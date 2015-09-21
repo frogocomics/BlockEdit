@@ -27,6 +27,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
@@ -36,7 +37,6 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Separator;
-import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
@@ -51,6 +51,7 @@ import javafx.stage.Stage;
  *
  * @author Jeff Chen
  **/
+@ParametersAreNonnullByDefault
 public class ImportSchematicDialog extends AbstractDialog {
 
     private Stage stage = new Stage();
@@ -84,12 +85,6 @@ public class ImportSchematicDialog extends AbstractDialog {
         this.stage.setTitle("BlockEdit \u2012 Import .schematic");
         this.stage.initModality(Modality.WINDOW_MODAL);
         final String resourcePath = "file:///" + System.getProperty("user.dir") + "\\src\\main\\resource\\";
-        this.stage.getIcons().addAll(
-                new Image(resourcePath + "favicon16.ico"),
-                new Image(resourcePath + "favicon32.ico"),
-                new Image(resourcePath + "favicon64.ico"),
-                new Image(resourcePath + "favicon128.ico"),
-                new Image(resourcePath + "favicon256.ico"));
         this.stage.toFront();
         //</editor-fold>
         //<editor-fold desc="Set grid layout">

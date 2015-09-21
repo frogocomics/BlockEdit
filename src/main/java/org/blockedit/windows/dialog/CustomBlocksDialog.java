@@ -18,27 +18,9 @@
 
 package org.blockedit.windows.dialog;
 
-import org.apache.commons.io.FilenameUtils;
-import org.blockedit.core.block.Block;
-import org.blockedit.core.output.BlockStorageFormat;
-import org.blockedit.exception.DataException;
-import org.blockedit.utils.ExceptionDialog;
 import org.blockedit.utils.UserInformation;
-import org.xml.sax.SAXException;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import javax.xml.parsers.ParserConfigurationException;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -63,24 +45,11 @@ public class CustomBlocksDialog extends AbstractDialog {
         stage.setTitle("BlockEdit \u2012 Custom Blocks");
         stage.initModality(Modality.APPLICATION_MODAL);
 
-        try {
-            blocks.setItems(getBlocks());
-        } catch (ParserConfigurationException | DataException | SAXException | IOException e) {
-            Alert alert = ExceptionDialog.unexpectedException(e);
-            alert.initModality(Modality.APPLICATION_MODAL);
-            alert.show();
-        }
         this.blocks.setEditable(false);
         TableColumn path = new TableColumn("Location");
         TableColumn block = new TableColumn("Block");
         this.blocks.getColumns().addAll(path, block);
-        try {
-            this.blocks.setItems(getBlocks());
-        } catch(ParserConfigurationException | DataException | SAXException | IOException e) {
-            Alert alert = ExceptionDialog.unexpectedException(e);
-            alert.initModality(Modality.APPLICATION_MODAL);
-            alert.show();
-        }
+
         path.setCellValueFactory(new PropertyValueFactory("locationProperty"));
         path.setCellValueFactory(new PropertyValueFactory("displayNameProperty"));
 
@@ -88,18 +57,5 @@ public class CustomBlocksDialog extends AbstractDialog {
         this.root.getChildren().addAll(title, this.blocks);
         stage.setScene(scene);
         return stage;
-    }
-
-    private ObservableList<Block> getBlocks() throws ParserConfigurationException, DataException, SAXException, IOException {
-        List<Block> blocks = new ArrayList<>();
-        for (final File fileEntry : new File(System.getProperty("user.dir") + "\\blocks").listFiles(pathname -> pathname.isFile() && (FilenameUtils.getExtension(pathname.getAbsolutePath())).equals("blk") | (FilenameUtils.getExtension(pathname.getAbsolutePath())).equals("block"))) {
-            if (new BlockStorageFormat().readBlock(fileEntry).isPresent()) {
-                Matcher matcher = Pattern.compile("([0-9]+)-(\\w+)\\.blk").matcher(fileEntry.getName());
-                if(matcher.matches()) {
-                    blocks.add(new BlockStorageFormat().readBlock(fileEntry).get());
-                }
-            }
-        }
-        return FXCollections.observableList(blocks);
     }
 }

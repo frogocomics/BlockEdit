@@ -17,6 +17,8 @@ BlockEdit, a general Minecraft program that is in heavy development
  */
 package org.blockedit.utils;
 
+import org.apache.commons.lang3.exception.ExceptionUtils;
+
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
@@ -70,7 +72,8 @@ public class ExceptionDialog {
         alert.setContentText(message);
         StringWriter sw = new StringWriter();
         PrintWriter pw = new PrintWriter(sw);
-        String exceptionText = exception.toString();
+        String exceptionText = ExceptionUtils.getStackTrace(exception);
+        exception.printStackTrace();
         Label label = new Label("The exception stacktrace was:");
         TextArea exceptionArea = new TextArea(exceptionText + "\n\n==User Information==\njava.version = " + System.getProperty("java.version") + "\nos.name = " + System.getProperty("os.name") + "\nos.arch = " + System.getProperty("os.arch") + "\nos.version = " + System.getProperty("os.version"));
         exceptionArea.setEditable(false);
